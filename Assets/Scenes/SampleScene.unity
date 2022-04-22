@@ -942,7 +942,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.861288
+  orthographic size: 5.9441805
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -966,8 +966,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 1.85, z: -10}
-  m_LocalScale: {x: 1.7375, y: 1, z: 1}
+  m_LocalPosition: {x: 0.03, y: 0.94, z: -10}
+  m_LocalScale: {x: 1.7375, y: 2.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3093,9 +3093,10 @@ GameObject:
   - component: {fileID: 1439825175}
   - component: {fileID: 1439825174}
   - component: {fileID: 1439825177}
+  - component: {fileID: 1439825178}
   - component: {fileID: 1439825176}
   - component: {fileID: 1439825179}
-  - component: {fileID: 1439825178}
+  - component: {fileID: 1439825180}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -3163,7 +3164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439825173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.46, y: -1.77, z: 0}
+  m_LocalPosition: {x: 2.46, y: 0.75, z: 0}
   m_LocalScale: {x: 0.6676, y: 0.7154, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3184,14 +3185,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.6
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1439825177
 BoxCollider2D:
@@ -3263,6 +3264,20 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1439825180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439825173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01dd7ba1d8932044889f34d84d44de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1439825179}
+  runSpeed: 40
 --- !u!1 &1450811351
 GameObject:
   m_ObjectHideFlags: 0
