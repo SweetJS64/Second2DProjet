@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlyerController : MonoBehaviour
 {
-    public float speed = 0.1f;
+    public float speed = 1f;
     public float jump = 0.4f;
     public Rigidbody2D rb;
+    public Vector2 moveVector;
+    public Animator animator;
 
     private bool isGrounded;
     private float groundRadius = 0.3f;
@@ -22,10 +24,8 @@ public class PlyerController : MonoBehaviour
 
     private void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.deltaTime);
-
-
+        walk();
+        
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundMask);
 
 
@@ -33,6 +33,7 @@ public class PlyerController : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jump));
         }
+        animator.SetBool("isJumping", isGrounded);
 
 
         if (Input.GetAxis("Horizontal") < 0)
@@ -43,6 +44,14 @@ public class PlyerController : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+
+    }
+
+    void walk()
+    {
+        moveVector.x = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(moveVector.x));
 
     }
 }

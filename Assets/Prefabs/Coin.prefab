@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7823682215155536000}
   - component: {fileID: 7823682215155536002}
-  - component: {fileID: 7823682215155536003}
+  - component: {fileID: 7353276414452180255}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7823682215155536001}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.47030136, y: -1.8662674, z: 9.904077}
   m_LocalScale: {x: 0.4131, y: 0.375, z: 1}
   m_ConstrainProportionsScale: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7823682215155536003
+--- !u!95 &7353276414452180255
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
