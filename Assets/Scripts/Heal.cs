@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DieSpace : MonoBehaviour
+public class Heal : MonoBehaviour
 {
-    public int collisionDamage = 10;
-    public GameObject respawn;
-
+    public int collisionHeal = 10;
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             Health health = other.gameObject.GetComponent<Health>();
-            health.TakeHit(collisionDamage);
+            health.SetHealth(collisionHeal);
+            Destroy(gameObject);    
 
-            other.transform.position = respawn.transform.position;
         }
     }
 }
