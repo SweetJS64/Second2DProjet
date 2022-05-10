@@ -12,10 +12,15 @@ public class Health : MonoBehaviour
     private int collisionHeal = 10;
     [SerializeField]
     private int collisionDamage = 10;
-    [SerializeField]
+    
 
     [Header("Respawn point info")]
+    [SerializeField]
     private GameObject respawn;
+
+    [Header("Death Screen info")]
+    [SerializeField]
+    private GameObject deathScreen;
 
     [Header("Health UI")]
     [SerializeField]
@@ -39,7 +44,8 @@ public class Health : MonoBehaviour
 
         if (resultHealth <= 0)
         {
-            Destroy(gameObject);
+            health = 0;
+            deathScreen.SetActive(true);
             return;
         }
         else if (resultHealth <= maxHelath)
