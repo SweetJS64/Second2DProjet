@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class CoinPicker : MonoBehaviour
 {
+    [Header("Coins UI")]
+    [SerializeField]
+    private TMP_Text coinsText;
     private int coins = 0;
-    public TMP_Text coinsText;
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        
-        if(coll.gameObject.tag == "Coin")
+        if (coll.tag == "Coin")
         {
             coins++;
             coinsText.text = coins.ToString();
             Destroy(coll.gameObject);
-        }    
+        }
     }
 }

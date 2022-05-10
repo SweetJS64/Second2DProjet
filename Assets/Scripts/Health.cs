@@ -2,37 +2,70 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+[RequireComponent(typeof(Collider2D))]
 public class Health : MonoBehaviour
 {
-    public int health = 100;
-    public int MaxHelath = 100;
-    public TMP_Text hpText;
+    [Header("Health configuration")]
+    [SerializeField]
+    private int maxHelath = 100;
+    [SerializeField]
+    private int collisionHeal = 10;
+    [SerializeField]
+    private int collisionDamage = 10;
+    
+
+    [Header("Respawn point info")]
+    [SerializeField]
+    private GameObject respawn;
+
+    [Header("Death Screen info")]
+    [SerializeField]
+    private GameObject deathScreen;
+
+    [Header("Health UI")]
+    [SerializeField]
+    private TMP_Text hpText;
+
+    private int health = 100;
+
+    private void Start()
+    {
+        health = maxHelath;
+    }
 
     private void Update()
     {
         hpText.text = health.ToString();
     }
-    public void TakeHit(int damage)
-    {
-        health -= damage;
 
-        if (health <= 0)
+    private void UpdateHealth(int bonusHealth)
+    {
+        var resultHealth = health + bonusHealth;
+
+        if (resultHealth <= 0)
         {
-            Destroy(gameObject);
+            health = 0;
+            deathScreen.SetActive(true);
+            return;
         }
-
-        
-    }
-    public void SetHealth(int bonusHealth)
-    {
-        health += bonusHealth;
-
-        if (health > MaxHelath)
+        else if (resultHealth <= maxHelath)
         {
-            health = MaxHelath;
+            health = resultHealth;
         }
     }
 
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case "Heal":
+                UpdateHealth(collisionHeal);
+                Destroy(other.gameObject);
+                break;
+            case "DeathZone":
+                UpdateHealth(-collisionDamage);
+                transform.position = respawn.transform.position;
+                break;
+        }
+    }
 }

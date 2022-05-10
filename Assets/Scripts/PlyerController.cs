@@ -2,56 +2,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(SpriteRenderer)), RequireComponent(typeof(Animator))]
 public class PlyerController : MonoBehaviour
 {
-    public float speed = 1f;
-    public float jump = 0.4f;
-    public Rigidbody2D rb;
-    public Vector2 moveVector;
-    public Animator animator;
+    [Header("Movement Configuration")]
 
-    private bool isGrounded;
+    [SerializeField, Range(0, 50), Tooltip("Player velocity modifier")]
+
+    private float velocityModifier = 10;
+
+    [SerializeField, Range(500, 5000)]
+    private float jumpForce = 1000;
+
+    [Header("Ground Detection")]
+    [SerializeField]
+    private LayerMask groundMask;
+    [SerializeField]
+    private Transform groundCheck;
+
+    [SerializeField, Range(0.01f, 10)]
     private float groundRadius = 0.3f;
 
-    public Transform groundCheck;
-    public LayerMask groundMask;
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private Animator animator;
+
+    private bool isGrounded;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
-
 
     private void Update()
     {
-        walk();
-        
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundMask);
 
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            rb.AddForce(new Vector2(0f, jump));
-        }
-        animator.SetBool("isJumping", isGrounded);
-
-
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-
+        var horizontalAxis = Input.GetAxis("Horizontal");
+        var isJumping = Input.GetButtonDown("Jump");
+        
+        HandleWalk(horizontalAxis);
+        HandleJump(isJumping);
     }
 
-    void walk()
+    private void HandleJump(bool isJumping)
     {
-        moveVector.x = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
-        animator.SetFloat("Speed", Mathf.Abs(moveVector.x));
+        if (isJumping && isGrounded)
+        {
+            rb.AddForce(new Vector2(0f, jumpForce));
+        }
+        animator.SetBool("isJumping", isGrounded);
+    }
 
+    private void HandleWalk(float horizontalAxis)
+    {
+        if (horizontalAxis < 0)
+        {
+            sr.flipX = true;
+        }
+        else if (horizontalAxis > 0)
+        {
+            sr.flipX = false;
+        }
+
+        rb.velocity = new Vector2(horizontalAxis * velocityModifier, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalAxis));
     }
 }
