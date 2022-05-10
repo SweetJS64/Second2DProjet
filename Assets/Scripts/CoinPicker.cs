@@ -12,7 +12,7 @@ public class CoinPicker : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "Coin")
-        {
+        {            
             coins++;
             coinsText.text = coins.ToString();
             Destroy(coll.gameObject);
