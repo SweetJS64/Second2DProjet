@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2349865111254791256}
   - component: {fileID: 2349865111254791263}
   - component: {fileID: 2060555649}
+  - component: {fileID: 97552939197360759}
   m_Layer: 0
-  m_Name: heart
+  m_Name: Heart
   m_TagString: Heal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,3 +123,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.34
+--- !u!114 &97552939197360759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349865111254791262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e301453b5706d894696d21cc1cc4224c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthEvent: {fileID: 11400000, guid: fc9a932c60f05b147866b28a8d95da78, type: 2}
+  healthConfiguration: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}

@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349865111254791262, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
       propertyPath: m_Name
-      value: heart (1)
+      value: Heart (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
@@ -285,7 +285,7 @@ Transform:
   m_Children:
   - {fileID: 732062736}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107745684
 GameObject:
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107745685}
   m_Layer: 0
-  m_Name: heal
+  m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +319,7 @@ Transform:
   - {fileID: 45080079}
   - {fileID: 1047063506}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &136940716
 PrefabInstance:
@@ -472,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349865111254791262, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
       propertyPath: m_Name
-      value: heart
+      value: Heart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
@@ -543,7 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292994387}
   m_Layer: 0
-  m_Name: inHell
+  m_Name: InHell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +564,7 @@ Transform:
   - {fileID: 547032278}
   - {fileID: 400246731}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &296679111 stripped
 Transform:
@@ -665,7 +665,7 @@ RectTransform:
   - {fileID: 624011019}
   - {fileID: 2058814700}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -887,6 +887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400246731}
   - component: {fileID: 400246733}
+  - component: {fileID: 400246734}
   m_Layer: 0
   m_Name: DieSpace
   m_TagString: DeathZone
@@ -935,6 +936,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 55.5, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &400246734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400246730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01eb2030f1c07aa4d82ea8b1814b4789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageEvent: {fileID: 11400000, guid: fc9a932c60f05b147866b28a8d95da78, type: 2}
+  respEvent: {fileID: 11400000, guid: b0d27d8c4eac07e469ec4fc72421972b, type: 2}
+  healthConfiguration: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
 --- !u!1001 &407477088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1242,7 +1258,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.5058824, g: 0.9686275, b: 0.9686275, a: 0}
+  m_BackGroundColor: {r: 0.5058824, g: 0.96862745, b: 0.96862745, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1439,7 +1455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547032278}
   m_Layer: 0
-  m_Name: resp
+  m_Name: Resp
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1528,6 +1544,8 @@ GameObject:
   - component: {fileID: 624011019}
   - component: {fileID: 624011021}
   - component: {fileID: 624011020}
+  - component: {fileID: 624011023}
+  - component: {fileID: 624011022}
   m_Layer: 7
   m_Name: HP
   m_TagString: Untagged
@@ -1652,6 +1670,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624011018}
   m_CullTransparentMesh: 1
+--- !u!114 &624011022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624011018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: fc9a932c60f05b147866b28a8d95da78, type: 2}
+  OnEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 624011023}
+        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
+        m_MethodName: UpdateHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &624011023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624011018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81b3b08f1ac8b7448fdf5c1a84cc383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthConfiguration: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
 --- !u!4 &629947319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7823682215155536000, guid: 70a8bbec03044784b83ddb5a084d471a, type: 3}
@@ -51916,7 +51975,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &818170902 stripped
 Transform:
@@ -52256,7 +52315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349865111254791262, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
       propertyPath: m_Name
-      value: heart (2)
+      value: Heart (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
@@ -52461,7 +52520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138368691}
   m_Layer: 0
-  m_Name: coins
+  m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52518,7 +52577,7 @@ Transform:
   - {fileID: 1686264191}
   - {fileID: 1235403848}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1151479783
 PrefabInstance:
@@ -52820,6 +52879,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70a8bbec03044784b83ddb5a084d471a, type: 3}
+--- !u!1 &1428384104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428384106}
+  - component: {fileID: 1428384105}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1428384105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428384104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1f4360e3d3e9b469569c8ece60c431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpConfig: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
+  coinsConfig: {fileID: 11400000, guid: 3594ecf837610a44997bb8ec4731b8cc, type: 2}
+--- !u!4 &1428384106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428384104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.05763, y: 3.8538382, z: -0.100237936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1434280199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7823682215155536000, guid: 70a8bbec03044784b83ddb5a084d471a, type: 3}
@@ -52839,8 +52944,10 @@ GameObject:
   - component: {fileID: 1439825181}
   - component: {fileID: 1439825183}
   - component: {fileID: 1439825182}
-  - component: {fileID: 1439825184}
+  - component: {fileID: 1439825186}
   - component: {fileID: 1439825185}
+  - component: {fileID: 1439825188}
+  - component: {fileID: 1439825187}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -52968,8 +53075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b64172fe8f3b9c4792d5debc017ab52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityModifier: 10
-  jumpForce: 1000
+  movementConfiguration: {fileID: 11400000, guid: 87e65fca26e0a824f811c8fc4720a764, type: 2}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -52995,19 +53101,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1439825184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439825173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83cdace37cb79ff4d8a8b99095b64103, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinsText: {fileID: 1831031710}
 --- !u!114 &1439825185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53020,11 +53113,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40faf019ff73e954bac59cf5ed5cf936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHelath: 100
-  collisionHeal: 10
-  collisionDamage: 50
+  healthConfiguration: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
   respawn: {fileID: 547032277}
-  hpText: {fileID: 624011020}
+--- !u!114 &1439825186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439825173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 0}
+  OnEventRaised:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1439825187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439825173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: b0d27d8c4eac07e469ec4fc72421972b, type: 2}
+  OnEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1439825185}
+        m_TargetAssemblyTypeName: PlayerDamageController, Assembly-CSharp
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1439825188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439825173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: fc9a932c60f05b147866b28a8d95da78, type: 2}
+  OnEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1439825185}
+        m_TargetAssemblyTypeName: PlayerDamageController, Assembly-CSharp
+        m_MethodName: HealthUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1446614891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53543,6 +53705,8 @@ GameObject:
   - component: {fileID: 1831031712}
   - component: {fileID: 1831031711}
   - component: {fileID: 1831031710}
+  - component: {fileID: 1831031713}
+  - component: {fileID: 1831031714}
   m_Layer: 7
   m_Name: Coins
   m_TagString: Untagged
@@ -53667,6 +53831,47 @@ RectTransform:
   m_AnchoredPosition: {x: -823, y: -518}
   m_SizeDelta: {x: 13.7467, y: 4.9387}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1831031713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831031709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5514bee7fa2507e4aaf6fca8ca5cf9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsConfiguration: {fileID: 11400000, guid: 3594ecf837610a44997bb8ec4731b8cc, type: 2}
+--- !u!114 &1831031714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831031709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: c672d821b8407f548a52a9c640dcfe51, type: 2}
+  OnEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1831031713}
+        m_TargetAssemblyTypeName: CoinsUI, Assembly-CSharp
+        m_MethodName: UpdateCoins
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1854724226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53802,7 +54007,7 @@ GameObject:
   - component: {fileID: 2058814700}
   - component: {fileID: 2058814699}
   m_Layer: 0
-  m_Name: heart
+  m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

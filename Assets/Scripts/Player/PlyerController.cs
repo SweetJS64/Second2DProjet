@@ -7,12 +7,8 @@ public class PlyerController : MonoBehaviour
 {
     [Header("Movement Configuration")]
 
-    [SerializeField, Range(0, 50), Tooltip("Player velocity modifier")]
-
-    private float velocityModifier = 10;
-
-    [SerializeField, Range(500, 5000)]
-    private float jumpForce = 1000;
+    [SerializeField]
+    private MovementConfiguration movementConfiguration;
 
     [Header("Ground Detection")]
     [SerializeField]
@@ -51,7 +47,7 @@ public class PlyerController : MonoBehaviour
     {
         if (isJumping && isGrounded)
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
+            rb.AddForce(new Vector2(0f, movementConfiguration.jumpForce));
         }
         animator.SetBool("isJumping", isGrounded);
     }
@@ -66,8 +62,8 @@ public class PlyerController : MonoBehaviour
         {
             sr.flipX = false;
         }
-
-        rb.velocity = new Vector2(horizontalAxis * velocityModifier, rb.velocity.y);
+        
+        rb.velocity = new Vector2(horizontalAxis * movementConfiguration.velocityModifier, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalAxis));
     }
 }
