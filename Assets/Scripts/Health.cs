@@ -48,7 +48,11 @@ public class Health : MonoBehaviour
             deathScreen.SetActive(true);
             return;
         }
-        else if (resultHealth <= maxHelath)
+        else if (resultHealth >= maxHelath)
+        {
+            health = maxHelath;
+        }
+        else 
         {
             health = resultHealth;
         }
@@ -64,7 +68,10 @@ public class Health : MonoBehaviour
                 break;
             case "DeathZone":
                 UpdateHealth(-collisionDamage);
+                if (health != 0)
+                {
                 transform.position = respawn.transform.position;
+                }
                 break;
         }
     }

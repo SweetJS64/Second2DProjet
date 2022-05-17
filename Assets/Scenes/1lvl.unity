@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349865111254791262, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
       propertyPath: m_Name
-      value: heart (1)
+      value: Heart (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
@@ -285,7 +285,7 @@ Transform:
   m_Children:
   - {fileID: 732062736}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107745684
 GameObject:
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107745685}
   m_Layer: 0
-  m_Name: heal
+  m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +319,7 @@ Transform:
   - {fileID: 45080079}
   - {fileID: 1047063506}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &136940716
 PrefabInstance:
@@ -472,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349865111254791262, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
       propertyPath: m_Name
-      value: heart
+      value: Heart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
@@ -543,7 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292994387}
   m_Layer: 0
-  m_Name: inHell
+  m_Name: InHell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +564,7 @@ Transform:
   - {fileID: 547032278}
   - {fileID: 400246731}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &296679111 stripped
 Transform:
@@ -665,7 +665,7 @@ RectTransform:
   - {fileID: 2058814700}
   - {fileID: 1286978041}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -988,6 +988,7 @@ GameObject:
   - component: {fileID: 426206618}
   - component: {fileID: 426206619}
   - component: {fileID: 426206620}
+  - component: {fileID: 426206621}
   m_Layer: 0
   m_Name: DieScreen
   m_TagString: Untagged
@@ -1003,8 +1004,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426206617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9069, y: 2.7206, z: 0}
-  m_LocalScale: {x: 1.8007056, y: 1.9654808, z: 1}
+  m_LocalPosition: {x: 0.9097, y: 2.694, z: 0}
+  m_LocalScale: {x: 1.7746443, y: 1.7740611, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1286978041}
@@ -1082,6 +1083,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &426206621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426206617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0218f6d9002454a8aef2f07ed70efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &438783364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7823682215155536000, guid: 70a8bbec03044784b83ddb5a084d471a, type: 3}
@@ -1164,12 +1177,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443875705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0012, y: 1.9699, z: 0}
-  m_LocalScale: {x: 2.887649, y: 2.7250814, z: 1}
+  m_LocalPosition: {x: -0.0088, y: 0.0067, z: 10}
+  m_LocalScale: {x: 1.110642, y: 0.938508, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1439825175}
-  m_RootOrder: 3
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &480652824 stripped
 Transform:
@@ -1302,6 +1315,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 15
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1368,12 +1382,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
-  m_LocalScale: {x: 2.6026063, y: 2.86553, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1.7375, y: 2.0500002, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1439825175}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 443875707}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &519420033
 Animator:
@@ -1395,6 +1410,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328bf1fba1a72ad4aa0e9b30a0b26f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1439825175}
+  speedCam: 10
+  radiusCam: 3
 --- !u!1001 &522654271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1524,7 +1554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547032278}
   m_Layer: 0
-  m_Name: resp
+  m_Name: Resp
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -52001,7 +52031,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &818170902 stripped
 Transform:
@@ -52341,7 +52371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349865111254791262, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
       propertyPath: m_Name
-      value: heart (2)
+      value: Heart (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c0c158b7d2b1849b1f9423a0d44415, type: 3}
@@ -52546,7 +52576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138368691}
   m_Layer: 0
-  m_Name: coins
+  m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52603,7 +52633,7 @@ Transform:
   - {fileID: 1686264191}
   - {fileID: 1235403848}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1151479783
 PrefabInstance:
@@ -53031,10 +53061,8 @@ Transform:
   m_Children:
   - {fileID: 1763782261}
   - {fileID: 165448581}
-  - {fileID: 519420032}
-  - {fileID: 443875707}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1439825176
 Rigidbody2D:
@@ -53139,7 +53167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHelath: 100
   collisionHeal: 10
-  collisionDamage: 50
+  collisionDamage: 100
   respawn: {fileID: 547032277}
   deathScreen: {fileID: 426206617}
   hpText: {fileID: 624011020}
@@ -53920,7 +53948,7 @@ GameObject:
   - component: {fileID: 2058814700}
   - component: {fileID: 2058814699}
   m_Layer: 0
-  m_Name: heart
+  m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2349865111254791263}
   - component: {fileID: 2060555649}
   m_Layer: 0
-  m_Name: heart
+  m_Name: Heart
   m_TagString: Heal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
