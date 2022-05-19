@@ -70,7 +70,7 @@ public class Health : MonoBehaviour
                 UpdateHealth(-collisionDamage);
                 if (health != 0)
                 {
-                transform.position = respawn.transform.position;
+                    transform.position = respawn.transform.position;
                 }
                 break;
         }

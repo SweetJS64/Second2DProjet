@@ -1,12 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DieMenu : MonoBehaviour
+public class FinishMenu : MonoBehaviour
 {
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
     }
+
+    public void MenuGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
 }
