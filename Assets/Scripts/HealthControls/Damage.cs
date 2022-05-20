@@ -5,11 +5,8 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField]
-    private GameEvent damageEvent;
-    
-    [SerializeField]
-    private GameEvent respEvent;
-    
+    private IntEvent damageEvent;
+
     [SerializeField]
     private HPConfiguration healthConfiguration;
     private void OnTriggerEnter2D(Collider2D other)
@@ -17,8 +14,7 @@ public class Damage : MonoBehaviour
         if (other.tag == "Player")
         {
             healthConfiguration.TakeDamage();
-            damageEvent.RaiseEvent();
-            respEvent.RaiseEvent();
+            damageEvent.RaiseEvent(healthConfiguration.health);
         }
     }
 }

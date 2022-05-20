@@ -948,8 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01eb2030f1c07aa4d82ea8b1814b4789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageEvent: {fileID: 11400000, guid: fc9a932c60f05b147866b28a8d95da78, type: 2}
-  respEvent: {fileID: 11400000, guid: b0d27d8c4eac07e469ec4fc72421972b, type: 2}
+  damageEvent: {fileID: 11400000, guid: 03f1f88c208a47943b14f2a17c2eefa3, type: 2}
   healthConfiguration: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
 --- !u!1001 &407477088
 PrefabInstance:
@@ -1545,7 +1544,7 @@ GameObject:
   - component: {fileID: 624011021}
   - component: {fileID: 624011020}
   - component: {fileID: 624011023}
-  - component: {fileID: 624011022}
+  - component: {fileID: 624011024}
   m_Layer: 7
   m_Name: HP
   m_TagString: Untagged
@@ -1570,7 +1569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -729, y: 526}
+  m_AnchoredPosition: {x: -729, y: 460.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624011020
@@ -1670,34 +1669,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624011018}
   m_CullTransparentMesh: 1
---- !u!114 &624011022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624011018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _channel: {fileID: 11400000, guid: fc9a932c60f05b147866b28a8d95da78, type: 2}
-  OnEventRaised:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 624011023}
-        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
-        m_MethodName: UpdateHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &624011023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1710,7 +1681,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81b3b08f1ac8b7448fdf5c1a84cc383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthConfiguration: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
+--- !u!114 &624011024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624011018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe5c4a30eac51f4faa26984b79afbda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: 03f1f88c208a47943b14f2a17c2eefa3, type: 2}
+  OnEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 624011023}
+        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
+        m_MethodName: UpdateHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!4 &629947319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7823682215155536000, guid: 70a8bbec03044784b83ddb5a084d471a, type: 3}
@@ -52910,6 +52908,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpConfig: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
   coinsConfig: {fileID: 11400000, guid: 3594ecf837610a44997bb8ec4731b8cc, type: 2}
+  healthUpdate: {fileID: 11400000, guid: 03f1f88c208a47943b14f2a17c2eefa3, type: 2}
+  coinsUpdate: {fileID: 11400000, guid: c672d821b8407f548a52a9c640dcfe51, type: 2}
 --- !u!4 &1428384106
 Transform:
   m_ObjectHideFlags: 0
@@ -52944,10 +52944,8 @@ GameObject:
   - component: {fileID: 1439825181}
   - component: {fileID: 1439825183}
   - component: {fileID: 1439825182}
-  - component: {fileID: 1439825186}
   - component: {fileID: 1439825185}
-  - component: {fileID: 1439825188}
-  - component: {fileID: 1439825187}
+  - component: {fileID: 1439825186}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -53113,7 +53111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40faf019ff73e954bac59cf5ed5cf936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthConfiguration: {fileID: 11400000, guid: 8ae20586e70381847942d9c4288e3d9d, type: 2}
   respawn: {fileID: 547032277}
 --- !u!114 &1439825186
 MonoBehaviour:
@@ -53124,61 +53121,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1439825173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fe5c4a30eac51f4faa26984b79afbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _channel: {fileID: 0}
-  OnEventRaised:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1439825187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439825173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _channel: {fileID: 11400000, guid: b0d27d8c4eac07e469ec4fc72421972b, type: 2}
-  OnEventRaised:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1439825185}
-        m_TargetAssemblyTypeName: PlayerDamageController, Assembly-CSharp
-        m_MethodName: Respawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1439825188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439825173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _channel: {fileID: 11400000, guid: fc9a932c60f05b147866b28a8d95da78, type: 2}
+  _channel: {fileID: 11400000, guid: 03f1f88c208a47943b14f2a17c2eefa3, type: 2}
   OnEventRaised:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1439825185}
         m_TargetAssemblyTypeName: PlayerDamageController, Assembly-CSharp
         m_MethodName: HealthUpdate
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -53186,7 +53139,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1001 &1446614891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53843,7 +53796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5514bee7fa2507e4aaf6fca8ca5cf9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsConfiguration: {fileID: 11400000, guid: 3594ecf837610a44997bb8ec4731b8cc, type: 2}
 --- !u!114 &1831031714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53853,7 +53805,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831031709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58e777cb5a7cffd40897c1bde7474cdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fe5c4a30eac51f4faa26984b79afbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _channel: {fileID: 11400000, guid: c672d821b8407f548a52a9c640dcfe51, type: 2}
@@ -53863,7 +53815,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1831031713}
         m_TargetAssemblyTypeName: CoinsUI, Assembly-CSharp
         m_MethodName: UpdateCoins
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -53871,7 +53823,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1001 &1854724226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54073,7 +54025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058814698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -850.72205, y: 536.03406, z: -21.59192}
+  m_LocalPosition: {x: -850.72205, y: 470.43408, z: -21.59192}
   m_LocalScale: {x: 2.755129, y: 2.755129, z: 2.755129}
   m_ConstrainProportionsScale: 0
   m_Children: []

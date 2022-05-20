@@ -5,7 +5,7 @@ using UnityEngine;
 public class Heal : MonoBehaviour
 {
     [SerializeField]
-    private GameEvent healthEvent;
+    private IntEvent healthEvent;
     [SerializeField]
     private HPConfiguration healthConfiguration;
 
@@ -15,7 +15,7 @@ public class Heal : MonoBehaviour
         {
             Destroy(gameObject);
             healthConfiguration.GetHeal();
-            healthEvent.RaiseEvent();
+            healthEvent.RaiseEvent(healthConfiguration.health);
         }
     }
 }

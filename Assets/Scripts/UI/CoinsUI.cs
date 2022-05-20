@@ -5,16 +5,13 @@ using TMPro;
 [RequireComponent(typeof(TMP_Text))]
 public class CoinsUI : MonoBehaviour
 {
-    [SerializeField]
-    private CoinsConfiguration coinsConfiguration;
     private TMP_Text coinsText;
-    private void Start()
+    private void OnEnable()
     {
         coinsText = gameObject.GetComponent<TMP_Text>();
-        UpdateCoins();
     }
-    public void UpdateCoins()
+    public void UpdateCoins(int arg)
     {
-        coinsText.text = coinsConfiguration.coins.ToString();
+        coinsText.text = arg.ToString();
     }
 }

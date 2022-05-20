@@ -5,16 +5,13 @@ using TMPro;
 [RequireComponent(typeof(TMP_Text))]
 public class HealthUI : MonoBehaviour
 {
-    [SerializeField]
-    private HPConfiguration healthConfiguration;
     private TMP_Text hpText;
-    private void Start()
+    private void OnEnable()
     {
         hpText = gameObject.GetComponent<TMP_Text>();
-        UpdateHealth();
     }
-    public void UpdateHealth()
+    public void UpdateHealth(int arg)
     {
-        hpText.text = healthConfiguration.health.ToString();
+        hpText.text = arg.ToString();
     }
 }

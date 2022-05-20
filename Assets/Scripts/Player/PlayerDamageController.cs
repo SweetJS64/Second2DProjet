@@ -6,24 +6,20 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerDamageController : MonoBehaviour
 {
-    [Header("Health configuration")]
-    [SerializeField]
-    private HPConfiguration healthConfiguration;
-
-    [Header("Respawn point info")]
     [SerializeField]
     private GameObject respawn;
+    private int oldHealth;
 
-    public void HealthUpdate()
+    public void HealthUpdate(int arg)
     {
-        if (healthConfiguration.IsDead())
+        if (oldHealth > arg)
         {
-            Destroy(gameObject);
+            transform.position = respawn.transform.position;
+            if (arg == 0)
+            {
+                Destroy(gameObject);
+            }
         }
-    }
-
-    public void Respawn()
-    {
-        transform.position = respawn.transform.position;
+        oldHealth = arg;
     }
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListener : MonoBehaviour
+public class VoidEventListener : MonoBehaviour
 {
     [SerializeField]
-    private GameEvent _channel = default;
+    private VoidEvent _channel = default;
 
     public UnityEvent OnEventRaised;
 

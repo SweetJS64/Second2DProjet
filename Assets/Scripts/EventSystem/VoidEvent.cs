@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-[CreateAssetMenu(fileName = "CustomGameEvent", menuName = "Events/GameEvent")]
-public class GameEvent : ScriptableObject
+[CreateAssetMenu(fileName = "CustomVoidEvent", menuName = "Events/VoidEvent")]
+public class VoidEvent : ScriptableObject
 {
     public UnityAction OnEventRaised;
 
