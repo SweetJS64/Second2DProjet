@@ -433,9 +433,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2082626829}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 11400000, guid: bde54b00f10b61a4f86e5cf7ca704534, type: 2}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: GotoScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -566,9 +566,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2082626829}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 11400000, guid: d0235e533d24cfe4d9ac3d84b6188177, type: 2}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: GotoScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
