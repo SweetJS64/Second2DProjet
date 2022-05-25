@@ -12,6 +12,4 @@ public class FinishMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-
 }

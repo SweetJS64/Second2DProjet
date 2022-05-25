@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(fileName = "SceneController", menuName = "Second2DProjet/SceneController", order = 0)]
+[CreateAssetMenu(fileName = "SceneController", menuName = "Second2DProject/SceneController", order = 0)]
 public class SceneController : ScriptableObject
 {
-    [SerializeField] int goToScene = 0;
+    [SerializeField] private int goToScene;
 
     public void GotoScene()
     {

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(SpriteRenderer)), RequireComponent(typeof(Animator))]
-public class PlyerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movement Configuration")]
 
@@ -21,22 +21,24 @@ public class PlyerController : MonoBehaviour
     [SerializeField, Range(0.01f, 10)]
     private float groundRadius = 0.3f;
 
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
-    private Animator animator;
+    private Rigidbody2D _rb;
+    private SpriteRenderer _sr;
+    private Animator _animator;
 
-    private bool isGrounded;
+    private bool _isGrounded;
+    private static readonly int Speed = Animator.StringToHash("Speed");
+    private static readonly int IsJumping = Animator.StringToHash("isJumping");
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+        _sr = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundMask);
+        _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundMask);
 
         var horizontalAxis = Input.GetAxis("Horizontal");
         var isJumping = Input.GetButtonDown("Jump");
@@ -47,26 +49,26 @@ public class PlyerController : MonoBehaviour
 
     private void HandleJump(bool isJumping)
     {
-        if (isJumping && isGrounded)
+        if (isJumping && _isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(0f, jumpForce));
+            _rb.velocity = new Vector2(_rb.velocity.x, 0);
+            _rb.AddForce(new Vector2(0f, jumpForce));
         }
-        animator.SetBool("isJumping", isGrounded);
+        _animator.SetBool(IsJumping, _isGrounded);
     }
 
     private void HandleWalk(float horizontalAxis)
     {
         if (horizontalAxis < 0)
         {
-            sr.flipX = true;
+            _sr.flipX = true;
         }
         else if (horizontalAxis > 0)
         {
-            sr.flipX = false;
+            _sr.flipX = false;
         }
 
-        rb.velocity = new Vector2(horizontalAxis * velocityModifier, rb.velocity.y);
-        animator.SetFloat("Speed", Mathf.Abs(horizontalAxis));
+        _rb.velocity = new Vector2(horizontalAxis * velocityModifier, _rb.velocity.y);
+        _animator.SetFloat(Speed, Mathf.Abs(horizontalAxis));
     }
 }
