@@ -1026,6 +1026,7 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
+
       y: 21
       width: 1102
       height: 487
